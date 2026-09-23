@@ -1,0 +1,1020 @@
+/* ==========================================
+   TIGER SPIN
+========================================== */
+
+.tiger-page {
+    width: min(1100px, 90%);
+    margin: auto;
+    padding: 55px 0 90px;
+}
+
+.tiger-heading {
+    margin-bottom: 35px;
+}
+
+.tiger-heading h1 {
+    margin-top: 16px;
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.tiger-heading h1 span {
+    color: var(--green);
+}
+
+.tiger-heading p {
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.tiger-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 20px;
+    align-items: start;
+}
+
+.tiger-game,
+.spin-history {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.tiger-game {
+    padding: 25px;
+}
+
+.tiger-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-label {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.tiger-top h2 {
+    margin-top: 5px;
+    font-size: 32px;
+}
+
+.tiger-balance {
+    padding: 10px 14px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* ==========================================
+   REELS
+========================================== */
+
+.reels-wrapper {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.reels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    position: relative;
+}
+
+.reel {
+    height: 130px;
+    display: grid;
+    place-items: center;
+
+    background: var(--card);
+
+    border: 2px solid var(--border);
+    border-radius: 12px;
+
+    font-size: 55px;
+    user-select: none;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.reel.spinning {
+    animation: reelShake 0.12s infinite;
+}
+
+@keyframes reelShake {
+
+    0% {
+        transform: translateY(-3px);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(-3px);
+    }
+
+}
+
+
+/* ==========================================
+   SÍMBOLOS VENCEDORES
+========================================== */
+
+.reel.winning {
+    border-color: var(--green);
+
+    box-shadow:
+        0 0 20px rgba(0, 232, 135, 0.35),
+        inset 0 0 15px rgba(0, 232, 135, 0.08);
+
+    animation: winningReel 0.8s infinite alternate;
+}
+
+@keyframes winningReel {
+
+    from {
+        transform: scale(1.02);
+    }
+
+    to {
+        transform: scale(1.07);
+    }
+
+}
+
+
+/* ==========================================
+   RESULTADO
+========================================== */
+
+.spin-result {
+    margin-top: 18px;
+    min-height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.spin-result.win {
+    color: var(--green);
+}
+
+.spin-result.loss {
+    color: var(--red);
+}
+
+
+/* ==========================================
+   CONTROLES
+========================================== */
+
+.spin-controls {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.spin-controls label {
+    display: block;
+    margin-bottom: 10px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.bet-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.bet-adjust {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--bg-secondary);
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+.bet-adjust:hover {
+    border-color: var(--green);
+    transform: translateY(-1px);
+}
+
+.bet-value {
+    min-width: 100px;
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.bet-value small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.spin-button {
+    width: min(300px, 100%);
+
+    margin-top: 18px;
+    padding: 15px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: var(--green);
+    color: #00150c;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.spin-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 232, 135, 0.15);
+}
+
+.spin-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* ==========================================
+   TABELA DE PRÊMIOS
+========================================== */
+
+.paytable {
+    margin-top: 30px;
+    padding-top: 22px;
+
+    border-top: 1px solid var(--border);
+}
+
+.paytable h3 {
+    margin-bottom: 12px;
+    font-size: 12px;
+}
+
+.symbol-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.symbol-row span {
+    font-size: 20px;
+}
+
+.symbol-row strong {
+    color: var(--green);
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   HISTÓRICO
+========================================== */
+
+.spin-history {
+    overflow: hidden;
+
+    position: sticky;
+    top: 100px;
+}
+
+.history-header {
+    padding: 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.history-header strong {
+    display: block;
+    font-size: 14px;
+}
+
+.history-header span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.history-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.history-empty {
+    padding: 35px 20px;
+
+    color: var(--muted);
+
+    text-align: center;
+    font-size: 11px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 14px 18px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.history-symbols {
+    font-size: 17px;
+}
+
+.history-info {
+    text-align: right;
+}
+
+.history-info small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 8px;
+}
+
+.history-info strong {
+    font-size: 10px;
+}
+
+.history-item.win .history-info strong {
+    color: var(--green);
+}
+
+.history-item.loss .history-info strong {
+    color: var(--red);
+}
+
+
+/* ==========================================
+   CARTA BÔNUS
+========================================== */
+
+.tiger-bonus-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    backdrop-filter: blur(7px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.tiger-bonus-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    animation: bonusScreenFlash 0.7s ease;
+}
+
+
+/* ==========================================
+   CARTA
+========================================== */
+
+.tiger-bonus-card {
+    width: 230px;
+    height: 330px;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transform:
+        scale(0.5)
+        rotateY(0deg);
+
+    transition:
+        transform 0.8s cubic-bezier(.2, .8, .2, 1);
+
+    filter:
+        drop-shadow(
+            0 0 30px
+            rgba(255, 196, 0, .35)
+        );
+}
+
+.tiger-bonus-card.flip {
+    transform:
+        scale(1)
+        rotateY(180deg);
+
+    animation: bonusCardPulse 1s ease;
+}
+
+
+/* ==========================================
+   FRENTE / VERSO
+========================================== */
+
+.bonus-card-front,
+.bonus-card-back {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    border: 2px solid #f5c542;
+
+    backface-visibility: hidden;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, .6);
+}
+
+
+/* ==========================================
+   FRENTE
+========================================== */
+
+.bonus-card-front {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 205, 65, .25),
+            transparent 60%
+        ),
+        linear-gradient(
+            145deg,
+            #151a21,
+            #252d38
+        );
+
+    color: white;
+}
+
+.bonus-card-front strong {
+    margin-top: 20px;
+
+    color: white;
+
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.bonus-card-front span {
+    margin-top: 8px;
+
+    color: #aab3c0;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==========================================
+   ÍCONE DA CARTA
+========================================== */
+
+.bonus-card-glow {
+    width: 100px;
+    height: 100px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    font-size: 58px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 205, 65, .35),
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 196, 0, .2);
+
+    animation:
+        bonusPulse
+        1s
+        infinite;
+}
+
+
+/* ==========================================
+   VERSO
+========================================== */
+
+.bonus-card-back {
+    transform: rotateY(180deg);
+
+    background:
+        radial-gradient(
+            circle at center,
+            #403516,
+            #151a21 70%
+        );
+
+    color: white;
+}
+
+.bonus-icon {
+    font-size: 65px;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(255, 197, 50, .7)
+        );
+
+    animation:
+        tigerBounce
+        0.8s
+        ease;
+}
+
+.bonus-card-back strong {
+    margin-top: 15px;
+
+    color: #ffd447;
+
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.bonus-card-back span {
+    margin-top: 18px;
+
+    color: #aab3c0;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.bonus-card-back b {
+    margin-top: 8px;
+
+    color: var(--green);
+
+    font-size: 28px;
+
+    text-shadow:
+        0 0 20px
+        rgba(0, 232, 135, 0.5);
+}
+
+
+/* ==========================================
+   ANIMAÇÃO "QUASE PEGOU"
+========================================== */
+
+.tiger-bonus-overlay.almost {
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 196, 0, .15),
+            rgba(0, 0, 0, .84) 60%
+        );
+}
+
+.tiger-bonus-overlay.almost
+.tiger-bonus-card {
+    animation:
+        cardAlmost 0.9s ease-in-out,
+        cardGlow 0.9s ease-in-out;
+}
+
+
+/* ==========================================
+   ANIMAÇÕES DA CARTA
+========================================== */
+
+@keyframes bonusScreenFlash {
+
+    0% {
+        background: rgba(255, 200, 0, 0);
+    }
+
+    30% {
+        background: rgba(255, 200, 0, .18);
+    }
+
+    100% {
+        background: rgba(0, 0, 0, .78);
+    }
+
+}
+
+@keyframes bonusCardPulse {
+
+    0% {
+        filter:
+            drop-shadow(
+                0 0 10px
+                rgba(255, 196, 0, .2)
+            );
+    }
+
+    50% {
+        filter:
+            drop-shadow(
+                0 0 45px
+                rgba(255, 196, 0, .8)
+            );
+    }
+
+    100% {
+        filter:
+            drop-shadow(
+                0 0 30px
+                rgba(255, 196, 0, .35)
+            );
+    }
+
+}
+
+@keyframes bonusPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+@keyframes tigerBounce {
+
+    0% {
+        transform:
+            translateY(25px)
+            scale(.7);
+
+        opacity: 0;
+    }
+
+    60% {
+        transform:
+            translateY(-8px)
+            scale(1.1);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            scale(1);
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes cardAlmost {
+
+    0% {
+        transform:
+            translateX(-130px)
+            rotate(-18deg)
+            scale(.85);
+    }
+
+    35% {
+        transform:
+            translateX(80px)
+            rotate(12deg)
+            scale(1.05);
+    }
+
+    65% {
+        transform:
+            translateX(-25px)
+            rotate(-5deg)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            translateX(0)
+            rotate(0)
+            scale(1);
+    }
+
+}
+
+@keyframes cardGlow {
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.7);
+    }
+
+}
+
+
+/* ==========================================
+   INFORMAÇÃO DO BÔNUS 10 GIROS
+========================================== */
+
+.ten-spin-bonus-info {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 18px 0 4px;
+    padding: 17px 18px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 190, 0, .13),
+            rgba(255, 125, 0, .045)
+        );
+
+    border:
+        1px solid rgba(255, 190, 0, .28);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.03),
+
+        0 8px 25px
+        rgba(0,0,0,.12);
+}
+
+
+/* brilho passando pela informação */
+
+.ten-spin-bonus-info::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: -80%;
+
+    width: 45%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 205, 65, .10),
+            transparent
+        );
+
+    transform: skewX(-18deg);
+
+    animation:
+        tenBonusShine
+        4s
+        infinite;
+}
+
+
+/* ícone */
+
+.ten-spin-bonus-info::before {
+    content: "🔥";
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 190, 0, .22),
+            rgba(255, 140, 0, .06)
+        );
+
+    border:
+        1px solid
+        rgba(255, 190, 0, .22);
+
+    font-size: 22px;
+
+    box-shadow:
+        0 0 18px
+        rgba(255, 170, 0, .10);
+
+    animation:
+        tenBonusIcon
+        1.5s
+        infinite
+        ease-in-out;
+}
+
+
+/* texto */
+
+.ten-spin-bonus-info strong {
+    display: block;
+
+    color: #ffd45c;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 4px;
+}
+
+.ten-spin-bonus-info span {
+    display: block;
+
+    color: rgba(255,255,255,.88);
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* animação do brilho */
+
+@keyframes tenBonusShine {
+
+    0% {
+        left: -80%;
+    }
+
+    35%,
+    100% {
+        left: 140%;
+    }
+
+}
+
+@keyframes tenBonusIcon {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 800px) {
+
+    .tiger-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .spin-history {
+        position: static;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .tiger-game {
+        padding: 16px;
+    }
+
+    .reels-wrapper {
+        padding: 12px;
+    }
+
+    .reel {
+        height: 90px;
+        font-size: 38px;
+    }
+
+    .tiger-bonus-card {
+        width: 200px;
+        height: 285px;
+    }
+
+    .ten-spin-bonus-info {
+        padding: 14px;
+        gap: 11px;
+    }
+
+    .ten-spin-bonus-info::before {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+    }
+
+    .ten-spin-bonus-info strong {
+        font-size: 11px;
+    }
+
+    .ten-spin-bonus-info span {
+        font-size: 10px;
+    }
+
+}

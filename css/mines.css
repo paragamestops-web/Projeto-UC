@@ -1,0 +1,976 @@
+/* ==========================================
+   BETZONE - MINES
+   ========================================== */
+
+.mines-page {
+    width: min(1250px, 94%);
+    margin: auto;
+    padding: 55px 0 90px;
+}
+
+
+/* ==========================================
+   CABEÇALHO
+   ========================================== */
+
+.mines-heading {
+    margin-bottom: 32px;
+}
+
+.page-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--green);
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.mines-heading h1 {
+    margin-top: 13px;
+
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: .98;
+
+    letter-spacing: -3px;
+}
+
+.mines-heading h1 span {
+    color: var(--green);
+}
+
+.mines-heading p {
+    margin-top: 17px;
+
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   LAYOUT
+   ========================================== */
+
+.mines-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        290px;
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* ==========================================
+   CARD PRINCIPAL
+   ========================================== */
+
+.mines-game {
+    position: relative;
+
+    padding: 26px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(0, 232, 135, .045),
+            transparent 40%
+        ),
+        var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, .22);
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.game-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.game-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--green);
+
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+.game-header h2 {
+    font-size: 21px;
+    letter-spacing: -.5px;
+}
+
+.game-status {
+    padding: 7px 13px;
+
+    border: 1px solid rgba(0, 232, 135, .35);
+
+    border-radius: 8px;
+
+    background: rgba(0, 232, 135, .07);
+
+    color: var(--green);
+
+    font-size: 9px;
+    font-weight: 900;
+}
+
+
+/* ==========================================
+   CONTROLES
+   ========================================== */
+
+.mines-controls-top {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+.control-box {
+    min-width: 0;
+
+    padding: 14px;
+
+    background: rgba(5, 9, 14, .42);
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+}
+
+.control-box label,
+.control-box > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+
+.control-box select {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: var(--bg-secondary);
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.control-box select:focus {
+    border-color: var(--green);
+}
+
+.control-box select:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.reward-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reward-box strong {
+    color: var(--green);
+
+    font-size: 19px;
+}
+
+
+/* ==========================================
+   ESTATÍSTICAS
+   ========================================== */
+
+.mines-top {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+.stat-card {
+    position: relative;
+
+    padding: 15px;
+
+    text-align: center;
+
+    background: rgba(5, 9, 14, .42);
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+}
+
+.stat-card small {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .6px;
+}
+
+.stat-card strong {
+    color: var(--green);
+
+    font-size: 19px;
+}
+
+.stat-card span {
+    margin-left: 3px;
+
+    color: var(--muted);
+
+    font-size: 7px;
+    font-weight: 800;
+}
+
+
+/* ==========================================
+   PRÊMIO
+   ========================================== */
+
+.reward-panel {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+}
+
+.reward-panel > div {
+    padding: 15px 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 232, 135, .07),
+            rgba(0, 232, 135, .025)
+        );
+
+    border: 1px solid rgba(0, 232, 135, .20);
+
+    border-radius: 11px;
+}
+
+.reward-panel span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+
+.reward-panel strong {
+    color: var(--green);
+
+    font-size: 18px;
+}
+
+
+/* ==========================================
+   PROGRESSO
+   ========================================== */
+
+.progress-container {
+    margin-bottom: 20px;
+}
+
+.progress-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.progress-info strong {
+    color: var(--green);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+
+    overflow: hidden;
+
+    background: #080d13;
+
+    border: 1px solid var(--border);
+
+    border-radius: 99px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+
+    background: var(--green);
+
+    border-radius: inherit;
+
+    box-shadow:
+        0 0 12px rgba(0, 232, 135, .5);
+
+    transition: width .25s ease;
+}
+
+
+/* ==========================================
+   TABULEIRO
+   ========================================== */
+
+.mine-grid {
+    width: min(570px, 100%);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 9px;
+
+    margin: 0 auto;
+}
+
+.mine-cell {
+    position: relative;
+
+    aspect-ratio: 1;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 0;
+
+    border: 1px solid #202a37;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111821,
+            #0b1017
+        );
+
+    color: #7b8ba0;
+
+    font-size: 22px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.025);
+
+    transition:
+        transform .16s ease,
+        border-color .16s ease,
+        background .16s ease,
+        box-shadow .16s ease;
+}
+
+.mine-cell::before {
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.025);
+}
+
+.mine-cell:hover:not(.revealed) {
+    transform: translateY(-3px);
+
+    border-color: rgba(0, 232, 135, .65);
+
+    background:
+        linear-gradient(
+            145deg,
+            #131e27,
+            #0b1515
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25),
+        0 0 18px rgba(0,232,135,.06);
+}
+
+.mine-cell:active:not(.revealed) {
+    transform: scale(.96);
+}
+
+.mine-cell.revealed {
+    cursor: default;
+}
+
+.mine-cell.safe {
+    color: white;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 232, 135, .15),
+            rgba(0, 232, 135, .04)
+        );
+
+    border-color: rgba(0, 232, 135, .75);
+
+    box-shadow:
+        0 0 22px rgba(0,232,135,.09),
+        inset 0 0 20px rgba(0,232,135,.04);
+
+    animation: diamondReveal .25s ease;
+}
+
+.mine-cell.mine {
+    color: white;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 69, 101, .25),
+            rgba(255, 69, 101, .06)
+        );
+
+    border-color: var(--red);
+
+    box-shadow:
+        0 0 25px rgba(255,69,101,.12);
+
+    animation: mineReveal .25s ease;
+}
+
+@keyframes diamondReveal {
+
+    0% {
+        transform: scale(.88);
+    }
+
+    70% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+@keyframes mineReveal {
+
+    0% {
+        transform: scale(.88);
+    }
+
+    60% {
+        transform: scale(1.06);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* ==========================================
+   MENSAGEM
+   ========================================== */
+
+.mine-message {
+    min-height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-align: center;
+}
+
+.mine-message.success {
+    color: var(--green);
+}
+
+.mine-message.danger {
+    color: var(--red);
+}
+
+.mine-message.warning {
+    color: #ffc857;
+}
+
+
+/* ==========================================
+   BOTÕES
+   ========================================== */
+
+.mine-controls {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+.new-game,
+.cashout-button {
+    min-height: 43px;
+
+    padding: 0 20px;
+
+    border-radius: 9px;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        opacity .15s ease,
+        box-shadow .15s ease;
+}
+
+.new-game {
+    border: 0;
+
+    background: var(--green);
+
+    color: #00150c;
+}
+
+.new-game:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0,232,135,.18);
+}
+
+.new-game:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+
+.cashout-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: 1px solid rgba(0,232,135,.45);
+
+    background: rgba(0,232,135,.08);
+
+    color: var(--green);
+}
+
+.cashout-button span {
+    font-size: 9px;
+}
+
+.cashout-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    background: rgba(0,232,135,.14);
+
+    box-shadow:
+        0 8px 25px rgba(0,232,135,.12);
+}
+
+.cashout-button:disabled {
+    opacity: .35;
+
+    cursor: not-allowed;
+}
+
+
+/* ==========================================
+   LATERAL
+   ========================================== */
+
+.mines-info {
+    position: sticky;
+
+    top: 100px;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,25,34,.98),
+            rgba(11,16,23,.98)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+}
+
+.side-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.side-icon {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+
+    background: rgba(0,232,135,.08);
+
+    border: 1px solid rgba(0,232,135,.20);
+
+    font-size: 17px;
+}
+
+.side-title strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.side-title small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 7px;
+    font-weight: 900;
+}
+
+.side-divider {
+    height: 1px;
+
+    margin: 16px 0;
+
+    background: var(--border);
+}
+
+.mines-info h2 {
+    margin-bottom: 16px;
+
+    font-size: 14px;
+}
+
+.info-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+}
+
+.info-item span {
+    flex: 0 0 21px;
+
+    width: 21px;
+    height: 21px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #0a1118;
+
+    border: 1px solid var(--border);
+
+    color: var(--green);
+
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.info-item p {
+    padding-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   RECORD
+   ========================================== */
+
+.best-score {
+    margin-top: 21px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,232,135,.07),
+            rgba(0,232,135,.02)
+        );
+
+    border: 1px solid rgba(0,232,135,.20);
+
+    border-radius: 10px;
+}
+
+.best-score small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 7px;
+    font-weight: 900;
+}
+
+.best-score strong {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: var(--green);
+
+    font-size: 24px;
+}
+
+.best-score span {
+    color: var(--muted);
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+
+/* ==========================================
+   SALDO LATERAL
+   ========================================== */
+
+.side-balance {
+    margin-top: 10px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    background: #0b1118;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+}
+
+.side-balance small {
+    display: block;
+
+    color: #ffc857;
+
+    font-size: 7px;
+    font-weight: 900;
+}
+
+.side-balance strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+.side-balance span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 6px;
+    font-weight: 800;
+}
+
+
+/* ==========================================
+   RESPONSIVO
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .mines-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .mines-info {
+        position: static;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .mines-page {
+        width: 94%;
+        padding-top: 35px;
+    }
+
+    .mines-game {
+        padding: 17px;
+    }
+
+    .mines-controls-top {
+        grid-template-columns: 1fr;
+    }
+
+    .mines-top {
+        grid-template-columns: 1fr;
+    }
+
+    .reward-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .mine-grid {
+        gap: 6px;
+    }
+
+    .mine-cell {
+        border-radius: 8px;
+        font-size: 17px;
+    }
+
+    .mine-controls {
+        flex-direction: column;
+    }
+
+    .new-game,
+    .cashout-button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .mines-heading h1 {
+        font-size: 39px;
+        letter-spacing: -2px;
+    }
+
+    .mine-cell {
+        font-size: 15px;
+    }
+
+}

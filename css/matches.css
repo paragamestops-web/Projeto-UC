@@ -1,0 +1,761 @@
+/* ==========================================
+   BETZONE - MATCHES
+========================================== */
+
+
+/* ==========================================
+   PAGE
+========================================== */
+
+.matches-page {
+    width: min(1250px, 90%);
+
+    margin: auto;
+
+    padding: 55px 0 90px;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.matches-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+.page-tag {
+    display: inline-block;
+
+    padding: 7px 11px;
+
+    color: var(--green);
+
+    background:
+        rgba(0, 232, 135, 0.07);
+
+    border:
+        1px solid
+        rgba(0, 232, 135, 0.25);
+
+    border-radius: 5px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.matches-header h1 {
+    margin-top: 18px;
+
+    font-size: clamp(40px, 5vw, 62px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.matches-header h1 span {
+    color: var(--green);
+}
+
+.matches-header p {
+    max-width: 600px;
+
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+.matches-balance {
+    min-width: 190px;
+
+    padding: 18px;
+
+    background: var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 12px;
+}
+
+.matches-balance small {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+.matches-balance strong {
+    color: var(--gold);
+
+    font-size: 18px;
+}
+
+
+/* ==========================================
+   FILTERS
+========================================== */
+
+.filters {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    overflow-x: auto;
+}
+
+.filter {
+    padding: 10px 16px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 8px;
+
+    background: var(--card);
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+.filter:hover {
+    color: white;
+
+    border-color: #3a4351;
+}
+
+.filter.active {
+    color: #00150c;
+
+    background: var(--green);
+
+    border-color: var(--green);
+}
+
+
+/* ==========================================
+   LAYOUT
+========================================== */
+
+.matches-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        340px;
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* ==========================================
+   MATCH CARD
+========================================== */
+
+.matches-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.match-card {
+    background: var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    transition: 0.2s;
+}
+
+.match-card:hover {
+    border-color: #37404d;
+}
+
+
+/* ==========================================
+   MATCH TOP
+========================================== */
+
+.match-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.match-league {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+.match-status {
+    padding: 5px 8px;
+
+    background:
+        rgba(0, 232, 135, 0.07);
+
+    color: var(--green);
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+/* ==========================================
+   TEAMS
+========================================== */
+
+.match-teams {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        70px
+        1fr;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: center;
+}
+
+.team {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.team-icon {
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--bg-secondary);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 12px;
+
+    font-size: 23px;
+}
+
+.team-name {
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+.match-vs {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+
+/* ==========================================
+   ODDS
+========================================== */
+
+.odds {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    margin-top: 24px;
+}
+
+.odd-button {
+    min-height: 58px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 8px;
+
+    background: var(--bg-secondary);
+
+    color: var(--text);
+
+    transition: 0.2s;
+}
+
+.odd-button:hover {
+    border-color: var(--green);
+
+    transform: translateY(-2px);
+}
+
+.odd-button.selected {
+    color: var(--green);
+
+    border-color: var(--green);
+
+    background:
+        rgba(0, 232, 135, 0.08);
+
+    box-shadow:
+        0 0 0 1px
+        rgba(0, 232, 135, 0.08);
+}
+
+.odd-label {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.odd-button.selected .odd-label {
+    color: var(--green);
+}
+
+.odd-value {
+    font-size: 14px;
+
+    font-weight: 900;
+}
+
+
+/* ==========================================
+   TIME
+========================================== */
+
+.match-time {
+    margin-top: 16px;
+
+    color: var(--muted);
+
+    text-align: center;
+
+    font-size: 10px;
+}
+
+
+/* ==========================================
+   TICKET
+========================================== */
+
+.ticket-sidebar {
+    position: sticky;
+
+    top: 100px;
+
+    overflow: hidden;
+
+    background: var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 15px;
+}
+
+.ticket-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+}
+
+.ticket-header > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+.ticket-header span {
+    font-size: 19px;
+}
+
+.ticket-header strong {
+    font-size: 14px;
+}
+
+.clear-ticket {
+    border: 0;
+
+    background: transparent;
+
+    color: var(--red);
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.ticket-empty {
+    padding: 45px 25px;
+
+    text-align: center;
+}
+
+.ticket-empty > div {
+    margin-bottom: 12px;
+
+    font-size: 42px;
+
+    opacity: 0.5;
+}
+
+.ticket-empty strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.ticket-empty p {
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   TICKET SELECTIONS
+========================================== */
+
+.ticket-selections {
+    max-height: 360px;
+
+    overflow-y: auto;
+}
+
+.ticket-selection {
+    position: relative;
+
+    padding: 15px 18px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+}
+
+.ticket-selection-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 7px;
+}
+
+.ticket-selection-league {
+    color: var(--muted);
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+.remove-selection {
+    border: 0;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.remove-selection:hover {
+    color: var(--red);
+}
+
+.ticket-match {
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.ticket-pick {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 8px;
+}
+
+.ticket-pick span {
+    color: var(--green);
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.ticket-pick strong {
+    color: var(--gold);
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   FOOTER DO TICKET
+========================================== */
+
+.ticket-footer {
+    padding: 18px;
+
+    border-top:
+        1px solid
+        var(--border);
+}
+
+.ticket-line {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 13px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.ticket-line strong {
+    color: white;
+}
+
+.points-input {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.points-input input {
+    width: 80px;
+
+    padding: 8px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 6px;
+
+    background: var(--bg-secondary);
+
+    color: white;
+
+    text-align: right;
+
+    outline: none;
+}
+
+.points-input input:focus {
+    border-color: var(--green);
+}
+
+.points-input span {
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+.possible-reward {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 18px;
+
+    padding: 13px;
+
+    background:
+        rgba(0, 232, 135, 0.05);
+
+    border:
+        1px solid
+        rgba(0, 232, 135, 0.12);
+
+    border-radius: 8px;
+}
+
+.possible-reward span {
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+.possible-reward strong {
+    color: var(--green);
+
+    font-size: 14px;
+}
+
+.confirm-ticket {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 13px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: var(--green);
+
+    color: #00150c;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    transition: 0.2s;
+}
+
+.confirm-ticket:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 232, 135, 0.15);
+}
+
+.confirm-ticket:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+/* ==========================================
+   RESULT
+========================================== */
+
+.match-result {
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 10px;
+
+    border-radius: 7px;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.match-result.show {
+    display: block;
+}
+
+.match-result.win {
+    color: var(--green);
+
+    background:
+        rgba(0, 232, 135, 0.08);
+}
+
+.match-result.loss {
+    color: var(--red);
+
+    background:
+        rgba(255, 69, 101, 0.08);
+}

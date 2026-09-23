@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mines | BetZone</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/mines.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <a href="../index.html" class="logo">
+        <span>⚡</span>
+        BETZONE
+    </a>
+
+    <nav class="navigation">
+
+        <a href="../index.html" class="nav-link">
+            Início
+        </a>
+
+        <a href="matches.html" class="nav-link">
+            Palpites
+        </a>
+
+        <a href="tiger.html" class="nav-link">
+            🐯 Tiger Spin
+        </a>
+
+        <a href="mines.html" class="nav-link active">
+            💎 Mines
+        </a>
+
+        <a href="ranking.html" class="nav-link">
+            Ranking
+        </a>
+
+        <a href="stats.html" class="nav-link">
+            Estatísticas
+        </a>
+
+    </nav>
+
+    <div class="user-actions">
+
+        <div class="balance">
+
+            <span>🪙</span>
+
+            <strong id="balance">
+                R$ 1.000,00
+            </strong>
+
+        </div>
+
+        <a href="profile.html" class="profile-button">
+            👤
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="mines-page">
+
+    <!-- CABEÇALHO -->
+
+    <section class="mines-heading">
+
+        <div class="page-tag">
+            💎 MINES
+        </div>
+
+        <h1>
+            Teste sua sorte.
+            <span>Resgate antes da mina.</span>
+        </h1>
+
+        <p>
+            Escolha sua aposta, encontre diamantes e resgate
+            seus pontos antes de encontrar uma mina.
+        </p>
+
+    </section>
+
+
+    <!-- JOGO -->
+
+    <section class="mines-layout">
+
+        <div class="mines-game">
+
+            <!-- HEADER DO JOGO -->
+
+            <div class="game-header">
+
+                <div>
+
+                    <span class="game-label">
+                        MINES
+                    </span>
+
+                    <h2>
+                        💎 Campo de Diamantes
+                    </h2>
+
+                </div>
+
+                <div
+                    id="difficulty"
+                    class="game-status"
+                >
+                    MÉDIA
+                </div>
+
+            </div>
+
+
+            <!-- CONTROLES -->
+
+            <div class="mines-controls-top">
+
+                <div class="control-box">
+
+                    <label for="betSelector">
+                        VALOR DA APOSTA
+                    </label>
+
+                    <select id="betSelector">
+
+                        <option value="10">
+                            R$ 10,00
+                        </option>
+
+                        <option value="25">
+                            R$ 25,00
+                        </option>
+
+                        <option value="50" selected>
+                            R$ 50,00
+                        </option>
+
+                        <option value="100">
+                            R$ 100,00
+                        </option>
+
+                        <option value="250">
+                            R$ 250,00
+                        </option>
+
+                        <option value="500">
+                            R$ 500,00
+                        </option>
+
+                        <option value="1000">
+                            R$ 1.000,00
+                        </option>
+
+                        <option value="2500">
+                            R$ 2.500,00
+                        </option>
+
+                        <option value="5000">
+                            R$ 5.000,00
+                        </option>
+
+                        <option value="10000">
+                            R$ 10.000,00
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="control-box">
+
+                    <label for="mineSelector">
+                        QUANTIDADE DE MINAS
+                    </label>
+
+                    <select id="mineSelector">
+
+                        <option value="3">
+                            3 minas
+                        </option>
+
+                        <option value="5" selected>
+                            5 minas
+                        </option>
+
+                        <option value="7">
+                            7 minas
+                        </option>
+
+                        <option value="10">
+                            10 minas
+                        </option>
+
+                        <option value="12">
+                            12 minas
+                        </option>
+
+                        <option value="15">
+                            15 minas
+                        </option>
+
+                        <option value="18">
+                            18 minas
+                        </option>
+
+                        <option value="20">
+                            20 minas
+                        </option>
+
+                        <option value="22">
+                            22 minas
+                        </option>
+
+                        <option value="24">
+                            24 minas
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="control-box reward-box">
+
+                    <span>
+                        VALOR POR DIAMANTE
+                    </span>
+
+                    <strong id="pointsPerDiamond">
+                        R$ 75,00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ESTATÍSTICAS -->
+
+            <div class="mines-top">
+
+                <div class="stat-card">
+
+                    <small>
+                        APOSTA
+                    </small>
+
+                    <strong id="currentBet">
+                        R$ 50,00
+                    </strong>
+
+                    <span>
+                        REAIS
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <small>
+                        MINAS
+                    </small>
+
+                    <strong id="mineCount">
+                        5
+                    </strong>
+
+                    <span>
+                        NO CAMPO
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <small>
+                        DIAMANTES
+                    </small>
+
+                    <strong id="safeCount">
+                        0
+                    </strong>
+
+                    <span>
+                        ENCONTRADOS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRÊMIO -->
+
+            <div class="reward-panel">
+
+                <div>
+
+                    <span>
+                        PRÊMIO ATUAL
+                    </span>
+
+                    <strong id="currentScore">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        SALDO
+                    </span>
+
+                    <strong id="gameBalance">
+                        R$ 1.000,00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESSO -->
+
+            <div class="progress-container">
+
+                <div class="progress-info">
+
+                    <span>
+                        PROGRESSO
+                    </span>
+
+                    <strong id="progressText">
+                        0%
+                    </strong>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="progressFill"
+                        class="progress-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABULEIRO -->
+
+            <div
+                id="mineGrid"
+                class="mine-grid"
+            ></div>
+
+
+            <!-- MENSAGEM -->
+
+            <div
+                id="mineMessage"
+                class="mine-message"
+            >
+                Escolha sua aposta e comece uma rodada.
+            </div>
+
+
+            <!-- AÇÕES -->
+
+            <div class="mine-controls">
+
+                <button
+                    id="cashOut"
+                    class="cashout-button"
+                    disabled
+                >
+
+                    💰 RESGATAR
+
+                    <span id="cashOutValue">
+                        R$ 0,00
+                    </span>
+
+                </button>
+
+
+                <button
+                    id="newGame"
+                    class="new-game"
+                >
+
+                    🎮 COMEÇAR RODADA
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- LATERAL -->
+
+        <aside class="mines-info">
+
+            <div class="side-title">
+
+                <div class="side-icon">
+                    💎
+                </div>
+
+                <div>
+
+                    <strong>
+                        Mines
+                    </strong>
+
+                    <small>
+                        DINHEIRO VIRTUAL
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="side-divider"></div>
+
+
+            <h2>
+                Como jogar
+            </h2>
+
+
+            <div class="info-item">
+
+                <span>1</span>
+
+                <p>
+                    Escolha quanto deseja apostar.
+                </p>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>2</span>
+
+                <p>
+                    Escolha a quantidade de minas.
+                </p>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>3</span>
+
+                <p>
+                    Cada 💎 encontrado aumenta seu prêmio.
+                </p>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>4</span>
+
+                <p>
+                    Você pode resgatar o prêmio a qualquer momento.
+                </p>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>5</span>
+
+                <p>
+                    Encontrar uma mina encerra a rodada e a aposta é perdida.
+                </p>
+
+            </div>
+
+
+            <!-- RECORD -->
+
+            <div class="best-score">
+
+                <small>
+                    SEU RECORDE
+                </small>
+
+                <strong id="bestScore">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <!-- SALDO LATERAL -->
+
+            <div class="side-balance">
+
+                <small>
+                    🪙 SALDO
+                </small>
+
+                <strong id="sideBalance">
+                    R$ 1.000,00
+                </strong>
+
+                <span>
+                    DINHEIRO VIRTUAL
+                </span>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        ⚡ BETZONE
+    </div>
+
+    <p>
+        Plataforma de entretenimento
+        com dinheiro virtual.
+    </p>
+
+    <span>
+        © 2026 BetZone
+    </span>
+
+</footer>
+
+
+<script src="../js/storage.js"></script>
+<script src="../js/player.js"></script>
+<script src="../js/mines.js"></script>
+<script src="../js/app.js"></script>
+
+</body>
+</html>

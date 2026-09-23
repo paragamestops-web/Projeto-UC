@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Palpites | BetZone</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/matches.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="topbar">
+
+        <a
+            href="../index.html"
+            class="logo"
+        >
+            <span>⚡</span>
+            BETZONE
+        </a>
+
+        <nav class="navigation">
+
+            <a
+                href="../index.html"
+                class="nav-link"
+            >
+                Início
+            </a>
+
+            <a
+                href="matches.html"
+                class="nav-link active"
+            >
+                Palpites
+            </a>
+
+            <a
+                href="tiger.html"
+                class="nav-link"
+            >
+                🐯 Tiger Spin
+            </a>
+
+            <a
+                href="mines.html"
+                class="nav-link"
+            >
+                💎 Mines
+            </a>
+
+            <a
+                href="ranking.html"
+                class="nav-link"
+            >
+                Ranking
+            </a>
+
+            <a
+                href="stats.html"
+                class="nav-link"
+            >
+                Estatísticas
+            </a>
+
+        </nav>
+
+        <div class="user-actions">
+
+            <div class="balance">
+
+                <span>🪙</span>
+
+                <strong id="balance">
+                    R$ 1.000,00
+                </strong>
+
+            </div>
+
+            <a
+                href="profile.html"
+                class="profile-button"
+            >
+                👤
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="matches-page">
+
+        <!-- CABEÇALHO -->
+
+        <section class="matches-header">
+
+            <div>
+
+                <span class="page-tag">
+                    ⚽ PALPITES
+                </span>
+
+                <h1>
+                    Escolha seus
+                    <span>palpites.</span>
+                </h1>
+
+                <p>
+                    Selecione os resultados das partidas
+                    e monte seu bilhete usando dinheiro virtual.
+                </p>
+
+            </div>
+
+            <div class="matches-balance">
+
+                <small>
+                    SEU SALDO
+                </small>
+
+                <strong>
+                    🪙
+                    <span id="pageBalance">
+                        R$ 1.000,00
+                    </span>
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FILTROS
+        ====================================== -->
+
+        <section class="filters">
+
+            <button
+                class="filter active"
+                data-filter="all"
+            >
+                Todos
+            </button>
+
+            <button
+                class="filter"
+                data-filter="brasil"
+            >
+                🇧🇷 Brasil
+            </button>
+
+            <button
+                class="filter"
+                data-filter="international"
+            >
+                🌎 Internacional
+            </button>
+
+            <button
+                class="filter"
+                data-filter="cup"
+            >
+                🏆 Copas
+            </button>
+
+        </section>
+
+
+        <!-- =====================================
+             CONTEÚDO
+        ====================================== -->
+
+        <div class="matches-layout">
+
+            <!-- PARTIDAS -->
+
+            <section>
+
+                <div
+                    id="matchesContainer"
+                    class="matches-container"
+                ></div>
+
+            </section>
+
+
+            <!-- =================================
+                 BILHETE
+            ================================== -->
+
+            <aside class="ticket-sidebar">
+
+                <div class="ticket-header">
+
+                    <div>
+
+                        <span>
+                            🎟️
+                        </span>
+
+                        <strong>
+                            Seu bilhete
+                        </strong>
+
+                    </div>
+
+                    <button
+                        id="clearTicket"
+                        class="clear-ticket"
+                    >
+                        Limpar
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="ticketEmpty"
+                    class="ticket-empty"
+                >
+
+                    <div>
+                        🎟️
+                    </div>
+
+                    <strong>
+                        Seu bilhete está vazio
+                    </strong>
+
+                    <p>
+                        Selecione uma opção
+                        em alguma partida.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="ticketSelections"
+                    class="ticket-selections"
+                ></div>
+
+
+                <div class="ticket-footer">
+
+                    <div class="ticket-line">
+
+                        <span>
+                            Seleções
+                        </span>
+
+                        <strong id="ticketCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="ticket-line">
+
+                        <span>
+                            Multiplicador
+                        </span>
+
+                        <strong id="ticketOdd">
+                            0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="ticket-line">
+
+                        <span>
+                            Valor
+                        </span>
+
+                        <div class="points-input">
+
+                            <span>
+                                R$
+                            </span>
+
+                            <input
+                                id="ticketAmount"
+                                type="number"
+                                min="10"
+                                max="500"
+                                value="10"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="possible-reward">
+
+                        <span>
+                            Retorno simulado
+                        </span>
+
+                        <strong id="possibleReward">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        id="confirmTicket"
+                        class="confirm-ticket"
+                        disabled
+                    >
+                        CONFIRMAR PALPITE
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ⚡ BETZONE
+        </div>
+
+        <p>
+            Plataforma de entretenimento
+            com dinheiro virtual.
+        </p>
+
+        <span>
+            © 2026 BetZone
+        </span>
+
+    </footer>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="../js/storage.js"></script>
+
+    <script src="../js/player.js"></script>
+
+    <script src="../js/matches.js"></script>
+
+    <script src="../js/app.js"></script>
+
+</body>
+
+</html>

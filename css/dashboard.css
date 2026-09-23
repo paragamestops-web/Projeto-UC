@@ -1,0 +1,992 @@
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    width: 100%;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 5%;
+
+    gap: 40px;
+
+    background: rgba(7, 9, 13, 0.92);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(18px);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 21px;
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    flex: 1;
+}
+
+.nav-link {
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text);
+
+    background: var(--card);
+}
+
+.nav-link.active {
+    color: var(--green);
+}
+
+
+/* =========================
+   USER
+========================= */
+
+.user-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.balance {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 10px 14px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    font-size: 13px;
+}
+
+.balance span {
+    color: var(--gold);
+}
+
+.balance strong {
+    color: var(--text);
+}
+
+.balance small {
+    color: var(--muted);
+}
+
+.profile-button {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    transition: 0.2s;
+}
+
+.profile-button:hover {
+    border-color: var(--green);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: min(1250px, 90%);
+
+    margin: auto;
+
+    padding: 50px 0 90px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(0, 232, 135, 0.11),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #11161e,
+            #090c11
+        );
+}
+
+.hero-content {
+    max-width: 600px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero-tag {
+    display: inline-block;
+
+    padding: 7px 11px;
+
+    color: var(--green);
+
+    background: rgba(0, 232, 135, 0.07);
+
+    border: 1px solid rgba(0, 232, 135, 0.25);
+
+    border-radius: 5px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    margin: 22px 0 18px;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--green);
+}
+
+.hero p {
+    max-width: 530px;
+
+    color: var(--muted);
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 14px 20px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: var(--green);
+
+    color: #00150c;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(0, 232, 135, 0.18);
+}
+
+.btn-secondary {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: #3b4554;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+    width: 390px;
+    height: 330px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+}
+
+.glow {
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 196, 0, 0.12);
+
+    filter: blur(45px);
+}
+
+.hero-tiger {
+    position: relative;
+
+    font-size: 190px;
+
+    filter:
+        drop-shadow(
+            0 0 35px
+            rgba(255, 196, 0, 0.25)
+        );
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.floating-card {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 15px;
+
+    background: rgba(17, 22, 30, 0.9);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.floating-card span {
+    font-size: 24px;
+}
+
+.floating-card small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+.floating-card strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 12px;
+}
+
+.card-one {
+    top: 20px;
+    right: 0;
+}
+
+.card-two {
+    bottom: 25px;
+    left: 0;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats-section {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-top: 18px;
+}
+
+.stat-box {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 20px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    transition: 0.2s;
+}
+
+.stat-box:hover {
+    transform: translateY(-2px);
+
+    border-color: #303947;
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--bg-secondary);
+
+    border-radius: 10px;
+
+    font-size: 21px;
+}
+
+.stat-box small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.stat-box strong {
+    font-size: 17px;
+}
+
+
+/* =========================
+   ACTIVITIES
+========================= */
+
+.activities {
+    margin-top: 60px;
+}
+
+.section-heading span {
+    color: var(--green);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.section-heading h2 {
+    margin-top: 8px;
+
+    font-size: 30px;
+}
+
+.activity-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-top: 22px;
+}
+
+.activity-card {
+    min-height: 190px;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 27px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s,
+        border-color 0.25s,
+        background 0.25s,
+        box-shadow 0.25s;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #37404e;
+
+    background: var(--card-hover);
+}
+
+.activity-icon {
+    width: 60px;
+    height: 60px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 14px;
+
+    font-size: 30px;
+
+    background: var(--bg-secondary);
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+.activity-card:hover .activity-icon {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   TIGER
+========================= */
+
+.activity-icon.tiger {
+    background: rgba(255, 196, 0, 0.08);
+
+    border: 1px solid rgba(255, 196, 0, 0.12);
+}
+
+.tiger-card:hover {
+    border-color: rgba(255, 196, 0, 0.25);
+
+    box-shadow:
+        0 15px 40px rgba(255, 196, 0, 0.05);
+}
+
+
+/* =========================
+   MINES
+========================= */
+
+.activity-icon.mines {
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(0, 232, 135, 0.20),
+            transparent 65%
+        ),
+        rgba(0, 232, 135, 0.07);
+
+    border: 1px solid rgba(0, 232, 135, 0.16);
+
+    box-shadow:
+        0 0 25px rgba(0, 232, 135, 0.04);
+}
+
+.mines-card {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(0, 232, 135, 0.07),
+            transparent 38%
+        ),
+        var(--card);
+}
+
+.mines-card:hover {
+    border-color: rgba(0, 232, 135, 0.35);
+
+    box-shadow:
+        0 15px 40px rgba(0, 232, 135, 0.08);
+}
+
+.mines-card:hover .activity-icon.mines {
+    transform: scale(1.07);
+
+    box-shadow:
+        0 0 28px rgba(0, 232, 135, 0.13);
+}
+
+.mines-card .activity-info span {
+    color: var(--green);
+}
+
+.mines-card::after {
+    content: "NOVO";
+
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    padding: 5px 8px;
+
+    border-radius: 6px;
+
+    background: rgba(0, 232, 135, 0.08);
+
+    border: 1px solid rgba(0, 232, 135, 0.18);
+
+    color: var(--green);
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   ACTIVITY TEXT
+========================= */
+
+.activity-info {
+    min-width: 0;
+}
+
+.activity-info span {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.activity-info h3 {
+    margin: 6px 0 7px;
+
+    font-size: 20px;
+}
+
+.activity-info p {
+    max-width: 300px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ACTIVITY ARROW
+========================= */
+
+.activity-arrow {
+    position: absolute;
+
+    right: 25px;
+    bottom: 22px;
+
+    color: var(--green);
+
+    font-size: 22px;
+
+    transition: 0.2s;
+}
+
+.activity-card:hover .activity-arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   RANKING
+========================= */
+
+.activity-icon.ranking {
+    background:
+        rgba(255, 196, 0, 0.07);
+
+    border: 1px solid
+        rgba(255, 196, 0, 0.10);
+}
+
+
+/* =========================
+   STATS CARD
+========================= */
+
+.activity-icon.stats {
+    background:
+        rgba(100, 150, 255, 0.07);
+
+    border: 1px solid
+        rgba(100, 150, 255, 0.10);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 5%;
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+
+    color: var(--muted);
+}
+
+.footer-logo {
+    color: var(--text);
+
+    font-weight: 900;
+
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 12px;
+
+    margin-bottom: 8px;
+}
+
+footer span {
+    font-size: 10px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1100px) {
+
+    .topbar {
+        gap: 20px;
+    }
+
+    .navigation {
+        gap: 0;
+    }
+
+    .nav-link {
+        padding: 9px 10px;
+
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 45px;
+    }
+
+    .hero-visual {
+        width: 330px;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .topbar {
+        height: auto;
+
+        min-height: 76px;
+
+        flex-wrap: wrap;
+
+        padding: 15px 5%;
+    }
+
+    .navigation {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        padding-bottom: 2px;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        gap: 40px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .stats-section {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    main {
+        width: 92%;
+
+        padding-top: 25px;
+    }
+
+    .hero {
+        padding: 35px 22px;
+
+        border-radius: 18px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-visual {
+        height: 270px;
+    }
+
+    .hero-tiger {
+        font-size: 140px;
+    }
+
+    .floating-card {
+        transform: scale(0.9);
+    }
+
+    .card-one {
+        right: -5px;
+    }
+
+    .card-two {
+        left: -5px;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .topbar {
+        padding: 12px 4%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .user-actions {
+        margin-left: auto;
+    }
+
+    .balance {
+        padding: 8px 10px;
+
+        font-size: 11px;
+    }
+
+    .profile-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-card {
+        min-height: 170px;
+
+        padding: 20px;
+
+        gap: 14px;
+    }
+
+    .activity-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 26px;
+    }
+
+    .activity-info h3 {
+        font-size: 18px;
+    }
+
+    .activity-info p {
+        font-size: 12px;
+    }
+
+    .activity-arrow {
+        right: 18px;
+        bottom: 16px;
+    }
+
+    .mines-card::after {
+        top: 14px;
+        right: 14px;
+    }
+
+}

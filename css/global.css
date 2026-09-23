@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================
+   VARIÁVEIS
+========================= */
+
+:root {
+    --bg: #07090d;
+    --bg-secondary: #0c1016;
+    --card: #11161e;
+    --card-hover: #171d27;
+
+    --border: #242b36;
+
+    --text: #f5f7fa;
+    --muted: #8993a3;
+
+    --green: #00e887;
+    --green-dark: #00b96c;
+
+    --gold: #ffc400;
+    --red: #ff4565;
+
+    --radius: 14px;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% -20%,
+            rgba(0, 232, 135, 0.06),
+            transparent 35%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        'Inter',
+        Arial,
+        sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar {
+    width: 100%;
+    height: 74px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 32px;
+
+    background: rgba(7, 9, 13, 0.94);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(14px);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+
+    white-space: nowrap;
+
+    margin-right: 42px;
+}
+
+.logo span {
+    font-size: 21px;
+}
+
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    height: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+
+    min-height: 42px;
+
+    padding: 0 14px;
+
+    border-radius: 9px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--text);
+
+    background: var(--card-hover);
+}
+
+.nav-link.active {
+    color: var(--green);
+
+    background: rgba(0, 232, 135, 0.08);
+}
+
+.nav-link:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   USER ACTIONS
+========================= */
+
+.user-actions {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* SALDO */
+
+.balance {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 0 14px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    white-space: nowrap;
+}
+
+.balance span {
+    font-size: 16px;
+}
+
+.balance strong {
+    color: var(--text);
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.balance small {
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* PERFIL */
+
+.profile-button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    font-size: 17px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.profile-button:hover {
+    background: var(--card-hover);
+
+    border-color: #303946;
+}
+
+.profile-button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button {
+    border: none;
+    outline: none;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #252c37;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #343d4a;
+}
+
+
+/* =========================
+   SELEÇÃO DE TEXTO
+========================= */
+
+::selection {
+    background: rgba(0, 232, 135, 0.25);
+    color: var(--text);
+}
